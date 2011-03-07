@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Subject:</b>
+  <%= @tip.subject %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @tip.address %>
+</p>
+
+<p>
+  <b>Tip:</b>
+  <%= @tip.tip %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @tip.contact %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @tip.lat %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @tip.lng %>
+</p>
+
+
+<%= link_to 'Edit', edit_tip_path(@tip) %> |
+<%= link_to 'Back', tips_path %>
