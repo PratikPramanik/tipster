@@ -4,6 +4,7 @@ class CreateDistricts < ActiveRecord::Migration
       t.string :name
       t.string :area
       t.string :email
+      t.text :coords
       t.timestamps
     end
   end

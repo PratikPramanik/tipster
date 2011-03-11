@@ -7,7 +7,7 @@ gem 'rails', '3.0.4'
 
 gem 'sqlite3'
 gem 'geokit'
-gem 'GeoRuby', :git => "git://github.com/joelmahoney/georuby.git"
+gem 'georuby', :git => "git://github.com/codeforamerica/georuby.git", :branch => "point-in-polygon"
 
 # Use unicorn as the web server
 # gem 'unicorn'

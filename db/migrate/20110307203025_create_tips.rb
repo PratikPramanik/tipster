@@ -1,6 +1,7 @@
 class CreateTips < ActiveRecord::Migration
   def self.up
     create_table :tips do |t|
+      t.integer :district_id
       t.string :subject
       t.string :address
       t.text :tip
