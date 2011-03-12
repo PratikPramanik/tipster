@@ -13,6 +13,6 @@ class Tip < ActiveRecord::Base
   end
   
   def determine_district!
-    self.district = District.all.find {|district| GeoRuby::SimpleFeatures::Point.is_in_single_polygon?(district.shapefile)} || default_district_or_whatever
+    self.district = District.all.find {|district| GeoRuby::SimpleFeatures::Point.from_x_y(lng,lat).is_in_polygon?(district.shape)}
   end
 end

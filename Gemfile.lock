@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/codeforamerica/georuby.git
-  revision: 753e37ccdd75d2899c9d1fe829367422004fe70d
+  revision: 5767afe024fe81864ef6424d6a1c9d1f6e58b0ad
   branch: point-in-polygon
   specs:
-    georuby (0.0.1)
+    geo_ruby (0.0.1)
 
 GEM
   remote: http://rubygems.org/
@@ -37,8 +37,12 @@ GEM
     activesupport (3.0.4)
     arel (2.0.9)
     builder (2.1.2)
+    dbf (1.5.1)
+      activesupport (~> 3.0.0)
+      fastercsv (= 1.5.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    fastercsv (1.5.3)
     geokit (1.5.0)
     i18n (0.5.0)
     mail (2.2.15)
@@ -77,7 +81,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dbf
+  geo_ruby!
   geokit
-  georuby!
   rails (= 3.0.4)
   sqlite3
