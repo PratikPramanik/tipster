@@ -3,6 +3,9 @@ class Tip < ActiveRecord::Base
   
   before_validation :geocode_address
   before_save :determine_district!
+  def determine_district!
+    self.district = District.all.find {|district| GeoRuby::SimpleFeatures::Point.from_x_y(lng,lat).is_in_polygon?(district.shape)}
+  end
   
   private
   
@@ -12,7 +15,4 @@ class Tip < ActiveRecord::Base
     self.lat, self.lng = geo.lat,geo.lng if geo.success
   end
   
-  def determine_district!
-    self.district = District.all.find {|district| GeoRuby::SimpleFeatures::Point.from_x_y(lng,lat).is_in_polygon?(district.shape)}
-  end
 end
