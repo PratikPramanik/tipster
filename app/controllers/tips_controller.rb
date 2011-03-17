@@ -33,6 +33,7 @@ class TipsController < ApplicationController
 
     respond_to do |format|
       if @tip.save
+        DistrictMailer.tip_email(@tip).deliver
         format.html { redirect_to(new_tip_url, :notice => 'Tip was successfully created.') }
       else
         format.html { render :action => "new" }
