@@ -11,5 +11,15 @@
     <p>
       Tip: <%= @tip.tip %>
     </p>
+    <% if @tip.contact %>
+      <h2>The tip submitter would like to be contacted</h2>
+      <p>
+        <dl>
+          <dt>Contact Name</dt><dd><%= @tip.contact_name || "None Given"%></dd>
+          <dt>Contact Phone</dt><dd><%= @tip.contact_phone || "None Given"%></dd>
+          <dt>Contact Email</dt><dd><%= @tip.contact_email || "None Given"%></dd>
+        </dl>
+      </p>
+    <% end %>
   </body>
 </html>
