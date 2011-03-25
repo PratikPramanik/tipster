@@ -18,6 +18,7 @@ class TipsController < ApplicationController
 
   def new
     @tip = Tip.new
+    @tip.attachments << Attachment.new
 
     respond_to do |format|
       format.html # new.html.erb

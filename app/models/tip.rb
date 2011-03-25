@@ -1,5 +1,7 @@
 class Tip < ActiveRecord::Base
   belongs_to :district
+  has_many :attachments
+  accepts_nested_attributes_for :attachments, :reject_if=>:all_blank
 
   before_validation :geocode_address
     	#maybe have a validation too?
